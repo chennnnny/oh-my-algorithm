@@ -20,6 +20,18 @@ void insertion_sort(int array[], int size) {
     }
 }
 
+void insertion_sort2(int array[], int size) {
+    for (int i = 1; i < size; ++i) {
+        int tmp = array[i];
+        int j = i;
+        while (j > 0 && tmp < array[j - 1]) {
+            array[j] = array[j - 1];
+            --j;
+        }
+        array[j] = tmp;
+    }
+}
+
 int main(int argc, char* argv[]) {
     int array[] = {9, 8, 7, 6, 5, 4, 3, 2, 1};
     int size = sizeof(array) / sizeof(array[0]);
